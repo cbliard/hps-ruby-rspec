@@ -106,4 +106,8 @@ module Actionwords
     settings_as_table = sut.get_settings.map {|k, v| ["", k.to_s, v.to_s]}
     expect(settings_as_table).to eq(table)
   end
+
+  def a_notification_about_descaling_is_displayed
+    expect(sut.is_descaling_needed?).to be true
+  end
 end
